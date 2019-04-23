@@ -6,11 +6,12 @@ let movies = [];
 
 const domStringBuilder = () => {
   let domString = '';
+  domString += '<div class="container">';
   domString += '<div class="row">';
   movies.forEach((movie) => {
     domString += '<div class="card col-3 movie-cards">';
     domString += `<div id=${movie.id}>`;
-    domString += `<h3class="card-header>${movie.name}</h3>`;
+    domString += `<h3 class="card-header">${movie.name}</h3>`;
     domString += '<ul class="list-group list-group-flush">';
     domString += `<li class="list-group-item"><b>Genre:</b> ${movie.genre}</li>`;
     domString += `<li class="list-group-item"><b>Release date:</b> ${movie.releaseDate}</li>`;
@@ -20,6 +21,7 @@ const domStringBuilder = () => {
     domString += '</div>';
     domString += '</div>';
   });
+  domString += '</div>';
   domString += '</div>';
   util.printToDom('movies', domString);
 };
