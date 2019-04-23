@@ -75,12 +75,23 @@ const sort = (e) => {
 //   }
 // };
 
+const filterByTextEvent = (e) => {
+  const searchText = e.target.value;
+  const searchLocations = locations.filter((x) => {
+    const hasName = x.name.includes(searchText);
+    const hasAddress = x.address.includes(searchText);
+    return hasName || hasAddress;
+  });
+  domStringBuilder(searchLocations);
+};
+
 const buttonEvents = () => {
   document.getElementById('dark').addEventListener('click', sort);
   document.getElementById('morning').addEventListener('click', sort);
   document.getElementById('evening').addEventListener('click', sort);
   document.getElementById('afternoon').addEventListener('click', sort);
   document.getElementById('all').addEventListener('click', sort);
+  document.getElementById('search-input').addEventListener('keyup', filterByTextEvent);
 };
 
 const initializeLocations = () => {
