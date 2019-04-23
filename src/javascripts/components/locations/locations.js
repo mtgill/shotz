@@ -4,6 +4,27 @@ import util from '../../helpers/util';
 
 let locations = [];
 
+const shootTimeClass = (shootTime) => {
+  let selectedClass = '';
+  switch (shootTime) {
+    case 'Morning':
+      selectedClass = 'bg-secondary';
+      break;
+    case 'Afternoon':
+      selectedClass = 'bg-success';
+      break;
+    case 'Evening':
+      selectedClass = 'bg-info';
+      break;
+    case 'After Dark':
+      selectedClass = 'bg-danger';
+      break;
+    default:
+      selectedClass = '';
+  }
+  return selectedClass;
+};
+
 const domStringBuilder = () => {
   let domString = '';
   domString += '<div class="container">';
@@ -11,7 +32,7 @@ const domStringBuilder = () => {
   locations.forEach((location) => {
     domString += '<div class="card col-2 location-cards">';
     domString += `<div id=${location.id}>`;
-    domString += `<h3 class="card-header">${location.name}</h3>`;
+    domString += `<h3 class="card-header ${shootTimeClass(location.shootTime)}">${location.name}</h3>`;
     domString += `<img src="${location.imageUrl}" class="card-img-top"></img>`;
     domString += `<p>${location.address}</p>`;
     domString += '</div>';
