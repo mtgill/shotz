@@ -105,4 +105,4 @@ const initializeLocations = () => {
     .catch(err => console.error(err));
 };
 
-export default { initializeLocations };
+export default { initializeLocations, domStringBuilder };
