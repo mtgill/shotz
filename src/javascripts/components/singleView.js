@@ -1,6 +1,5 @@
 import locationsData from '../helpers/data/locationsData';
 import moviesData from '../helpers/data/moviesData';
-// import locations from './locations/locations';
 import util from '../helpers/util';
 
 let movieArray = [];
@@ -53,7 +52,6 @@ const test = () => {
       const hasLocation = x.id.includes(movieLocation);
       if (x.id === movieLocation) {
         tempArray.push(x);
-        // console.error(movieLocation);
       }
       return hasLocation;
     });
@@ -63,9 +61,7 @@ const test = () => {
 };
 
 const backEvent = () => {
-  console.error('button works');
-  // domStringBuilder(movieArray);
-  // domStringBuilder(locationArray);
+  document.location.reload();
 };
 
 const backButtonEvent = () => {
@@ -87,16 +83,19 @@ const movieTest = (e) => {
       selectedMovie = movieId[0].locations;
       movieStringBuilder(movieId[0]);
       test();
+      backButtonEvent();
       break;
     case 'movie3':
       selectedMovie = movieId[0].locations;
       movieStringBuilder(movieId[0]);
       test();
+      backButtonEvent();
       break;
     case 'movie4':
       selectedMovie = movieId[0].locations;
       movieStringBuilder(movieId[0]);
       test();
+      backButtonEvent();
       break;
     default:
       console.error('default');
@@ -115,6 +114,7 @@ const moviesInit = () => {
     .then((resp) => {
       const movieResults = resp.data.movies;
       movieArray = movieResults;
+      return movieResults;
     })
     .catch(err => console.error(err));
 };
@@ -125,9 +125,9 @@ const locationsInit = () => {
       const locationResults = resp.data.locations;
       locationArray = locationResults;
       console.error(locationArray);
+      return locationResults;
     })
     .catch(err => console.error(err));
 };
-
 
 export default { moviesInit, movieEvents, locationsInit };

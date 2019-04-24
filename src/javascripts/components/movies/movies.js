@@ -39,4 +39,4 @@ const initializeMovies = () => {
     .catch(err => console.error(err));
 };
 
-export default { initializeMovies };
+export default { initializeMovies, domStringBuilder };
