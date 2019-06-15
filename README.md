@@ -3,11 +3,11 @@ Shotz is an application that tracks movies and the places they're shot. The loca
 
 ## Screenshotz
 
-![shotz screenshot-1]( "shotz screenshot-1")
+![shotz screenshot-1](https://raw.githubusercontent.com/mtgill/shotz/master/assets/screenshots/shotz%20-1.PNG "shotz screenshot-1")
 
-![shotz screenshot-2]( "shotz screenshot-2")
+![shotz screenshot-2](https://raw.githubusercontent.com/mtgill/shotz/master/assets/screenshots/shotz-2.PNG "shotz screenshot-2")
 
-![shotz screenshot-3]( "shotz screenshot-3")
+![shotz screenshot-3](https://raw.githubusercontent.com/mtgill/shotz/master/assets/screenshots/shotz-3.PNG "shotz screenshot-3")
 
 # Technologies Used
 * html, scss and javascript
